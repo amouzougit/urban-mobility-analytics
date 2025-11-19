@@ -1,0 +1,9 @@
+# sources.yml
+version: 2
+
+sources:
+  - name: urban_data # Le nom de la source sera utilisé dans {{ source('urban_data', ...) }}
+    database: urban_data # Nom de la DB dans Postgres (voir profiles.yml)
+    schema: public
+    tables:
+      - name: raw_velib_data # Le nom de la table créée par Airflow

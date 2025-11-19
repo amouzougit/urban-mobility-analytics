@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Docker & Environment
+profiles.yml
+.env
+docker-compose.override.yaml
+*.pem
+
+# Airflow
+logs/
+airflow.db
+airflow.cfg
+
+# dbt
+dbt_project/target/
+dbt_project/dbt_packages/
+dbt_project/logs/
+
+# IDE
+.vscode/
+.idea/
+
+# Fichiers Airflow / dbt générés (cache, logs)
+logs/
+target/
+dbt_modules/
+
+# Fichiers temporaires/cache Python
+__pycache__/
+.pytest_cache/
+*.pyc

@@ -1,0 +1,6 @@
+# requirements.txt
+dbt-core
+dbt-postgres
+requests
+pandas
+psycopg2-binary
