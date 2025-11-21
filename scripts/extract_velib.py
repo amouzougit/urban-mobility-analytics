@@ -18,16 +18,16 @@ def extract_data():
     """
     1. Récupération des données depuis l'API Vélib.
     """
-    print(f"🔍 Récupération des données depuis {API_URL}...")
+    print(f" Récupération des données depuis {API_URL}...")
     response = requests.get(API_URL)
     
     if response.status_code == 200:
         data_json = response.json()
         results = data_json.get('results', [])
-        print(f"✅ {len(results)} stations récupérées.")
+        print(f" {len(results)} stations récupérées.")
         return results
     else:
-        raise Exception(f"❌ Erreur API : {response.status_code}")
+        raise Exception(f" Erreur API : {response.status_code}")
 
 def transform_data(results):
     """
@@ -68,7 +68,7 @@ def load_data(df):
     
     # On utilise 'if_exists='append'' pour ajouter une nouvelle ligne à chaque fois que le DAG s'exécute.
     df.to_sql('raw_velib_data', engine, if_exists='append', index=False)
-    print("✅ Données insérées avec succès dans la table raw_velib_data.")
+    print(" Données insérées avec succès dans la table raw_velib_data.")
 
 def run_velib_etl():
     """ Fonction principale pour être appelée par Airflow. """
@@ -78,7 +78,7 @@ def run_velib_etl():
         load_data(clean_df)
         print("🎉 ETL Vélib terminé avec succès.")
     except Exception as e:
-        print(f"🔥 Échec de l'ETL Vélib : {e}")
+        print(f" Échec de l'ETL Vélib : {e}")
         raise
 
 if __name__ == "__main__":
