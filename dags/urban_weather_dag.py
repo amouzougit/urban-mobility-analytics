@@ -3,13 +3,14 @@ from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator 
 from datetime import datetime, timedelta
 import sys
-
-
 import os
 
 # Import des fonctions Python
+
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/../scripts"))
 from extract_velib import run_velib_etl # Assurez-vous que cette ligne est bien présente
+from extract_weather import run_weather_etl  
+
 
 # Définition des arguments par défaut... (inchangé)
 default_args = {
@@ -36,6 +37,12 @@ with DAG(
     t1_velib_ingest = PythonOperator(
         task_id='ingest_velib_data',
         python_callable=run_velib_etl
+    )
+
+    # NOUVELLE TÂCHE MÉTÉO
+    t1_weather_ingest = PythonOperator(
+        task_id='ingest_weather_data',
+        python_callable=run_weather_etl
     )
 
     # : Tâche 2 : Transformation dbt (T)

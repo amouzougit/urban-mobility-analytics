@@ -76,7 +76,7 @@ def run_velib_etl():
         raw_data = extract_data()
         clean_df = transform_data(raw_data)
         load_data(clean_df)
-        print("🎉 ETL Vélib terminé avec succès.")
+        print(" ETL Vélib terminé avec succès.")
     except Exception as e:
         print(f" Échec de l'ETL Vélib : {e}")
         raise

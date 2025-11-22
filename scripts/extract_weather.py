@@ -6,7 +6,7 @@ from datetime import datetime
 
 # --- CONFIGURATION API MÉTÉO ---
 # Remplacez ceci par une vraie clé API si vous en avez une, sinon une valeur générique
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "YOUR_DUMMY_API_KEY") 
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "d8027b3dd901934183bb1e92670da1b9") 
 CITY = "Paris,FR"
 API_URL = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={WEATHER_API_KEY}&units=metric"
 
@@ -73,7 +73,7 @@ def run_weather_etl():
         raw_data = extract_weather_data()
         clean_df = transform_weather_data(raw_data)
         load_weather_data(clean_df)
-        print("🎉 ETL Météo terminé avec succès.")
+        print(" ETL Météo terminé avec succès.")
     except Exception as e:
         print(f" Échec de l'ETL Météo : {e}")
         raise

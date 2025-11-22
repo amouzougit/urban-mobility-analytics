@@ -7,3 +7,4 @@ sources:
     schema: public
     tables:
       - name: raw_velib_data # Le nom de la table créée par Airflow
+      - name: raw_weather_data    # Le nom de la table créée par Airflow
