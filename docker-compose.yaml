@@ -7,15 +7,19 @@ x-airflow-common:
     - .env
   environment:
     &airflow-common-env
-    AIRFLOW__CORE__EXECUTOR: LocalExecutor # Plus simple pour un projet mono-machine
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres-airflow/airflow
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'false' # On ne veut pas les exemples par défaut
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     # Connexion au Data Warehouse pour nos scripts
     DW_POSTGRES_USER: ${POSTGRES_USER}
     DW_POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     DW_POSTGRES_DB: ${POSTGRES_DB}
     DW_POSTGRES_HOST: ${POSTGRES_HOST}
+    
+    # SECURITE: Variable d'environnement pour la  clé API Météo
+    WEATHER_API_KEY: "ceb19cc9a87a21fe9bcd5375818b8e78" # API Météo
+    
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
@@ -50,7 +54,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     ports:
-      - "5432:5432" # Accessible depuis ton PC sur localhost:5432
+      - "5432:5432"
     restart: always
 
   # --- 3. Airflow Init (S'exécute une fois pour créer les tables Airflow) ---

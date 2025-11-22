@@ -6,7 +6,7 @@ from datetime import datetime
 
 # --- CONFIGURATION API MÉTÉO ---
 # Remplacez ceci par une vraie clé API si vous en avez une, sinon une valeur générique
-WEATHER_API_KEY = os.getenv("WEATHER_API_KEY", "d8027b3dd901934183bb1e92670da1b9") 
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 CITY = "Paris,FR"
 API_URL = f"http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={WEATHER_API_KEY}&units=metric"
 
