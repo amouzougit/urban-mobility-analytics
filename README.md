@@ -5,7 +5,7 @@ Ce projet est un pipeline de données **ELT (Extract, Load, Transform)** complet
 
 L'objectif est de fournir une infrastructure de données robuste capable d'aider à la prise de décision pour la redistribution des flottes de vélos.
 
-## 🏗 Architecture Technique
+##  Architecture Technique
 
 Le projet repose sur une stack Data Engineering moderne et conteneurisée :
 
@@ -16,7 +16,7 @@ Le projet repose sur une stack Data Engineering moderne et conteneurisée :
 * **Infrastructure :** Docker & Docker Compose pour un déploiement isolé et reproductible.
 * **Sécurité :** Gestion des clés API via variables d'environnement (pas de secrets dans le code).
 
-## 🚀 Fonctionnalités Clés
+##  Fonctionnalités Clés
 
 1.  **Ingestion Automatisée :** Récupération horaire des données de disponibilité des stations et de la météo locale.
 2.  **Gestion des Erreurs :** Mécanismes de "Retry" dans Airflow et validation des schémas.
@@ -25,7 +25,7 @@ Le projet repose sur une stack Data Engineering moderne et conteneurisée :
     * `mart_urban_weather_context` : Table finale jointe et agrégée prête pour l'analyse BI.
 4.  **Qualité des Données :** Tests dbt intégrés (unicité, non-nullité).
 
-## 📊 Aperçu des Données (Exemple)
+##  Aperçu des Données (Exemple)
 
 Le pipeline génère une table analytique permettant de répondre à des questions telles que : *"Quel est l'impact de la pluie sur le taux de disponibilité dans le 11ème arrondissement ?"*
 
@@ -62,4 +62,4 @@ Pré-requis : Docker et Docker Compose installés.
     Rendez-vous sur `http://localhost:8080` et lancez le DAG `urban_mobility_etl`.
 
 ## 👤 Auteur
-Projet réalisé par **[TON NOM]** dans le cadre d'un portfolio Data Engineering.
+Projet réalisé par **KEVO** dans le cadre d'un portfolio Data Engineering.
