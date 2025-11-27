@@ -1,6 +1,6 @@
 # 🚲 Urban Mobility ETL : Vélib' & Météo Analytics
 
-## 📋 À propos du projet
+##  À propos du projet
 Ce projet est un pipeline de données **ELT (Extract, Load, Transform)** complet, conçu pour analyser la corrélation entre la disponibilité des vélos (Vélib' Métropole) et les conditions météorologiques à Paris en temps réel.
 
 L'objectif est de fournir une infrastructure de données robuste capable d'aider à la prise de décision pour la redistribution des flottes de vélos.
@@ -40,7 +40,7 @@ Pré-requis : Docker et Docker Compose installés.
 
 1.  **Cloner le dépôt :**
     ```bash
-    git clone [https://github.com/amouzougit/urban-mobility-analytics.git](https://github.com/amouzougit/urban-mobility-analytics.git)
+    git clone https://github.com/amouzougit/urban-mobility-analytics.git
     cd urban-mobility-analytics
     ```
 
