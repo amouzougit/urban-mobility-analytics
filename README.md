@@ -1,17 +1,17 @@
-# 🚲 Urban Mobility ETL : Vélib' & Météo Analytics
+#  Urban Mobility ETL : Vélib' & Météo Analytics
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue?logo=docker)
 ![Status](https://img.shields.io/badge/Status-Alpha-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## 📖 À propos du projet
+##  À propos du projet
 
 Ce projet est un pipeline de données **ELT (Extract, Load, Transform)** complet, conçu pour analyser la corrélation entre la disponibilité des vélos (Vélib' Métropole) et les conditions météorologiques à Paris.
 
 L'objectif est de fournir une infrastructure de données robuste capable d'aider à la prise de décision pour la redistribution des flottes de vélos en fonction des conditions météorologiques et des patterns de mobilité urbaine.
 
-## 🏗 Architecture Technique
+##  Architecture Technique
 
 Le projet repose sur une stack Data Engineering moderne et conteneurisée :
 
@@ -24,7 +24,7 @@ Le projet repose sur une stack Data Engineering moderne et conteneurisée :
 * **Infrastructure :** Docker & Docker Compose pour un déploiement isolé et reproductible
 * **Sécurité :** Gestion des clés API via variables d'environnement (pas de secrets dans le code)
 
-## 📁 Structure du Projet
+##  Structure du Projet
 
 ```
 urban-mobility-analytics/
@@ -45,7 +45,7 @@ urban-mobility-analytics/
 └── README.md
 ```
 
-## 📋 Prérequis
+##  Prérequis
 
 | Outil | Version | Lien |
 |-------|---------|------|
@@ -56,7 +56,7 @@ urban-mobility-analytics/
 **Clés API requises :**
 - OpenWeatherMap API Key (gratuit) : https://openweathermap.org/api
 
-## ✨ Fonctionnalités Clés
+##  Fonctionnalités Clés
 
 1. **Ingestion Automatisée** 
    - Récupération horaire des données de disponibilité des stations Vélib'
@@ -74,7 +74,7 @@ urban-mobility-analytics/
    - Tests dbt intégrés (unicité, non-nullité)
    - Monitoring des anomalies
 
-## 📊 Aperçu des Données (Exemple)
+##  Aperçu des Données (Exemple)
 
 Le pipeline génère une table analytique permettant de répondre à des questions telles que :
 > *"Quel est l'impact de la pluie sur le taux de disponibilité dans le 11ème arrondissement ?"*
@@ -84,7 +84,7 @@ Le pipeline génère une table analytique permettant de répondre à des questio
 | 2025-11-22 14:00:00 | 1668                  | 8.7°C    | mist            |
 | 2025-11-22 15:00:00 | 1129                  | 8.5°C    | broken clouds   |
 
-## 🚀 Comment lancer le projet
+##  Comment lancer le projet
 
 ### 1. Cloner le dépôt
 
@@ -160,7 +160,7 @@ docker compose exec postgres env | grep POSTGRES
 docker compose restart postgres
 ```
 
-## 📈 Performance et Résultats
+##  Performance et Résultats
 
 | Métrique | Valeur |
 |----------|--------|
@@ -170,14 +170,14 @@ docker compose restart postgres
 | Temps de transformation | < 5 min |
 | Stockage mensuel | ~200 MB |
 
-## 🔗 Ressources Utiles
+##  Ressources Utiles
 
 - [Documentation Airflow](https://airflow.apache.org/docs/)
 - [Documentation dbt](https://docs.getdbt.com/)
 - [PostgreSQL Docs](https://www.postgresql.org/docs/)
 - [Vélib' API Documentation](https://opendata.paris.fr/explore/dataset/velib-metropole-stations)
 
-## 🤝 Contribution
+##  Contribution
 
 Les contributions sont bienvenues ! Pour proposer des améliorations :
 
@@ -187,11 +187,11 @@ Les contributions sont bienvenues ! Pour proposer des améliorations :
 4. Poussez vers la branche (`git push origin feature/amelioration`)
 5. Ouvrez une Pull Request
 
-## 📜 Licence
+##  Licence
 
 Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## 👤 Auteur
+##  Auteur
 
 Projet réalisé par **KEVO** dans le cadre d'un portfolio Data Engineering.
 
